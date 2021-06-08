@@ -1,4 +1,5 @@
 class BlogsController < ApplicationController
+  before_action :set_blog, only: [:show, :edit]
   def new
     @blog = Blog.new
   end
@@ -18,10 +19,14 @@ class BlogsController < ApplicationController
     @blogs = Blog.all
   end
   def show
-    @blog = Blog.find(params[:id])
+  end
+  def edit
   end
   private
   def blog_params
     params.require(:blog).permit(:content, :image)
+  end
+  def set_blog
+    @blog = Blog.find(params[:id])
   end
 end
