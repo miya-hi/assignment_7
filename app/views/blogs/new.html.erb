@@ -1,10 +1,20 @@
 <%= form_with(model: @blog, local: true, url: confirm_blogs_path) do |form| %>
+<% if @blog.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= @blog.errors.count %>件のエラーがあります。</h2>
+      <ul>
+      <% @blog.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
 <div class="field">
-  <%= form.label :content %>
+  <%= form.label :今なにしてる？ %>
   <%= form.text_field :content %>
 </div>
 <div class="field">
-  <%= form.label :image %>
+  <%= form.label :画像 %>
   <%= form.file_field :image %>
 </div>
 <%= form.submit "投稿" %>

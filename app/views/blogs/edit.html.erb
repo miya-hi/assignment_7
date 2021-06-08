@@ -1,10 +1,10 @@
 <%= form_with(model: @blog, local: true) do |form| %>
 <div class="field">
-  <%= form.label :content %>
+  <%= form.label :内容 %>
   <%= form.text_field :content %>
 </div>
 <div class="field">
-  <%= form.label :image %>
+  <%= form.label :画像 %>
   <%= form.file_field :image %>
 </div>
 <%= form.submit "投稿" %>
