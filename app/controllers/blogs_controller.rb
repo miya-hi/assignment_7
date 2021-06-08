@@ -14,8 +14,11 @@ class BlogsController < ApplicationController
       end
     end
   end
+  def index
+    @blogs = Blog.all
+  end
   private
   def blog_params
-    params.require(:blog).permit(:comtent, :image)
+    params.require(:blog).permit(:content, :image)
   end
 end
