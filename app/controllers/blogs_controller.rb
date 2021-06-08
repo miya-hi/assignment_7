@@ -1,5 +1,5 @@
 class BlogsController < ApplicationController
-  before_action :set_blog, only: [:show, :edit]
+  before_action :set_blog, only: [:show, :edit, :update]
   def new
     @blog = Blog.new
   end
@@ -21,6 +21,13 @@ class BlogsController < ApplicationController
   def show
   end
   def edit
+  end
+  def update
+    if @blog.update(blog_params)
+      redirect_to blogs_path, notice:"編集しました"
+    else
+      render :edit
+    end
   end
   private
   def blog_params
