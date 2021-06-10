@@ -1,12 +1,14 @@
-<h3>以下の内容で、投稿する。</h3>
+<div id="wrapper">
+<div class="title">以下の内容で投稿しますか</div>
 <%= form_with(model: @blog, url: blogs_path, local: true) do |form| %>
   <%= form.hidden_field :content %>
-  <p>内容:<%= @blog.content %></p>
+  <p class="before_post">内容:<%= @blog.content %></p>
   <%= image_tag(@blog.image.url) if @blog.image && @blog.image.url %>
   <%= form.hidden_field :image_cache %>
-  <%= form.submit  "投稿する" %>
+  <p><%= form.submit  "投稿" %></p>
 <% end %>
 <%= form_with(model:@blog, url:new_blog_path, local:true, method:"get") do |form| %>
   <%= form.hidden_field :image_cache %>
   <%= form.submit "戻る", name: 'back' %>
 <% end %>
+</div>

@@ -1,3 +1,52 @@
 // Place all the styles related to the blogs controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+html {
+  font-size: 62.5%;
+}
+a {
+  display: block;
+  text-decoration: none;
+  color: black;
+}
+#wrapper {
+  padding: 5px;
+  width: 1000px;
+}
+.header {
+  display: flex;
+}
+.trans {
+  margin: 5px;
+  font-size: 1.2rem;
+}
+.user {
+  padding: 5px;
+  font-size: 1.5rem;
+}
+.button a{
+  width: 110px;
+  font-size: 1.5rem;
+  border:1px solid #333
+}
+.title {
+  font-size: 2rem;
+}
+.post_title th {
+  padding: 5px;
+  font-size: 1.4rem;
+}
+.post_content td {
+  padding: 5px;
+  font-size: 1.5rem;
+  text-align: center;
+}
+.content {
+  border:1px solid #333
+}
+.before_post {
+  font-size: 1.5rem;
+}
+.new_post {
+  font-size: 1.5rem;
+}

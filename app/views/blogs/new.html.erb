@@ -1,3 +1,4 @@
+<div id="wrapper">
 <%= form_with(model: @blog, local: true, url: confirm_blogs_path) do |form| %>
 <% if @blog.errors.any? %>
     <div id="error_explanation">
@@ -10,13 +11,16 @@
     </div>
   <% end %>
 <div class="field">
-  <%= form.label :今なにしてる？ %>
+  <div class="new_post"><%= form.label :今なにしてる？ %></div>
   <%= form.text_field :content %>
 </div>
 <div class="field">
-  <%= form.label :画像 %>
+  <div class="new_post"><%= form.label :画像 %></div>
   <%= form.file_field :image %>
 </div>
+<br>
 <%= form.submit "投稿" %>
 <% end %>
-<%= link_to "一覧画面へ", blogs_path %>
+<br>
+<div class="button"><%= link_to "一覧画面へ", blogs_path %></div>
+</div>
